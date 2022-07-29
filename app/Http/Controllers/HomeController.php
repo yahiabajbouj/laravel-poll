@@ -14,7 +14,7 @@ class HomeController extends Controller
     }
 
     public function vote(Request $request){
-        Contestant::find($request->contestantId)->increment('voite_count');
+        Contestant::find($request->contestantId)->increment('vote_count');
         $request->session()->put('voted', true);
         return back();
     }
